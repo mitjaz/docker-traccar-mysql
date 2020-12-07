@@ -1,6 +1,6 @@
 # Traccar docker
 
-[Traccar](https://github.com/traccar/traccar) docker with mysql and daily database dumps
+[Traccar](https://github.com/traccar/traccar) docker service with mysql and daily database dumps
 
 To start the service:
 ```
