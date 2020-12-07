@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS traccar;
+CREATE USER IF NOT EXISTS 'traccar'@'%';
+GRANT ALL PRIVILEGES ON traccar.* To 'traccar'@'%';
