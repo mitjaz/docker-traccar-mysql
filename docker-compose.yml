@@ -16,7 +16,7 @@ services:
 
   traccar:
     image: traccar/traccar
-    container_name: container_name: traccar
+    container_name: traccar
     restart: always
     ports:
       - 80:8082
