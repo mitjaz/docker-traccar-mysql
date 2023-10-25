@@ -5,6 +5,7 @@ services:
 
   db:
     image: mysql
+    container_name: traccar_db
     restart: always
     command: --default-authentication-plugin=mysql_native_password
     environment:
@@ -15,6 +16,7 @@ services:
 
   traccar:
     image: traccar/traccar
+    container_name: container_name: traccar
     restart: always
     ports:
       - 80:8082
@@ -22,9 +24,13 @@ services:
       - 5000-5150:5000-5150/udp
     volumes:
       - ./traccar.xml:/opt/traccar/conf/traccar.xml:ro
+      - /opt/traccar/logs:/opt/traccar/logs:rw 
+    depends_on:
+      - db 
 
   backup:
     image: databack/mysql-backup
+    container_name: traccar_backup
     restart: always
     user: "0"
     volumes:
